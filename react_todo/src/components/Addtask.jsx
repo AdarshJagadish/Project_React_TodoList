@@ -20,9 +20,8 @@ function AddTask({ task, setTask, description, setDescription, addTask }) {
         placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        required
       />
-      <button type="submit">Add</button>
+      <button type="submit">Add Task</button>
     </form>
   );
 }

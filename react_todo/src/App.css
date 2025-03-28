@@ -1,6 +1,6 @@
 /* General styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Courier New", monospace; /* Notepad-style font */
   background-color: #f4f4f4;
   display: flex;
   justify-content: center;
@@ -9,111 +9,170 @@ body {
   margin: 0;
 }
 
-/* Container */
+/* Notepad Container */
 .todo-container {
-  width: 400px;
-  background: white;
+  width: 500px;
+  height: 600px;
+  background: #fff;
+  color: black;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   text-align: center;
+  border: 2px solid #000; /* Black outline for doodle effect */
+  background: linear-gradient(white, #f8f8f8);
+  position: relative;
 }
 
-/* Heading */
+/* Title */
 h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 /* Add Task Section */
 .add-task {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center; /* Centers the button */
+  gap: 8px;
 }
 
+/* Inputs */
 .add-task input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
+  width: 80%;
+  margin-bottom: 5px;
+  color: #000;
+  padding: 10px;
+  border: 2px solid #000;
   border-radius: 5px;
   font-size: 16px;
+  background: #fff;
+  text-align: center;
 }
 
+/* Add Button */
 .add-task button {
-  background: #28a745;
+  background: #444647;
   color: white;
-  padding: 10px;
+  padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  width: 50%;
+  font-size: 14px;
+  text-align: center;
+  transition: 0.3s;
 }
 
 .add-task button:hover {
-  background: #218838;
+  background: #00b309;
 }
 
-/* Task List */
-.task-list {
-  margin-top: 20px;
+/* Task List Container */
+.task-list-container {
+  max-height: 350px;
+  overflow-y: auto;
+  margin-top: 10px;
+  padding-right: 5px;
+  border-top: 2px dashed #000; /* Doodle-style line */
+  padding-top: 10px;
 }
 
+/* Task Item */
 .task {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   background: #fff;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 2px solid #000;
   border-radius: 5px;
   margin-bottom: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 0px #000;
+  transition: 0.3s;
 }
 
+/* Completed Task Style */
 .task.completed .task-title {
   text-decoration: line-through;
-  color: #999;
+  color: #777;
 }
 
+.task.completed {
+  opacity: 0.5;
+}
+
+/* Task Content */
 .task-content {
   flex: 1;
   text-align: left;
 }
 
+/* Task Title */
 .task-title {
   font-weight: bold;
+  font-size: 18px;
+  color: #000;
+  text-transform: uppercase;
 }
 
+/* Task Description */
 .task-desc {
-  font-size: 14px;
-  color: #555;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Checkbox */
+.task input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 /* Buttons */
-.task-actions button {
-  margin-left: 5px;
-  padding: 5px 10px;
-  border: none;
+.task-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Icons */
+.edit-icon, .delete-icon {
+  font-size: 18px;
   cursor: pointer;
-  border-radius: 5px;
+  transition: 0.3s ease;
 }
 
-.task-actions button:nth-child(1) {
-  background: #007bff;
-  color: white;
+.edit-icon {
+  color: #676464;
 }
 
-.task-actions button:nth-child(2) {
-  background: #ffc107;
-  color: white;
+.edit-icon:hover {
+  color: #0091ff;
 }
 
-.task-actions button:nth-child(3) {
-  background: #dc3545;
-  color: white;
+.delete-icon {
+  color: #676464;
 }
 
-.task-actions button:hover {
-  opacity: 0.8;
+.delete-icon:hover {
+  color: #ff0019;
+}
+
+/* Scrollbar */
+.task-list-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.task-list-container::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 3px;
+}
+
+.task-list-container::-webkit-scrollbar-track {
+  background: #f4f4f4;
 }
