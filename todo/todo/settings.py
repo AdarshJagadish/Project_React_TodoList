@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-_(r73br6g07)l!icnre
 DEBUG = True
 
 # Allowed hosts
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # Installed apps
 INSTALLED_APPS = [
@@ -58,11 +58,11 @@ MIDDLEWARE = [
 ]
 
 # CORS settings for cross-origin access
-CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-]
+# CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:5173",
+#     "http://127.0.0.1:5173",
+# ]
 
 # Root URL configuration
 ROOT_URLCONF = 'todo.urls'  # Ensure this matches your project folder name
