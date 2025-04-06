@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Ensure this directory exists
+        'DIRS': [os.path.join(BASE_DIR, 'app', 'templates')],  # Ensure this directory exists
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -57,12 +57,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# CORS settings for cross-origin access
-# CORS_ALLOW_CREDENTIALS = True
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:5173",
-#     "http://127.0.0.1:5173",
-# ]
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
 
 # Root URL configuration
 ROOT_URLCONF = 'todo.urls'  # Ensure this matches your project folder name
